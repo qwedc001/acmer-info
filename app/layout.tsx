@@ -22,8 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh_cn" suppressHydrationWarning>
-      <body className="flex min-h-screen w-full flex-col">{children}</body>
-      <Analytics />
+      <body className="flex min-h-screen w-full flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
