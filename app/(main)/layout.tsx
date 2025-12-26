@@ -28,6 +28,7 @@ import { NavItem } from './nav-item';
 import { SearchInput } from './search';
 import { ModeToggle } from '@/components/mode-toggle';
 import { cn } from '@/lib/utils';
+import { isNavLinkActive } from '@/lib/navigation-utils';
 
 export default function DashboardLayout({
   children
@@ -126,11 +127,7 @@ function MobileNav() {
       <SheetContent side="left" className="sm:max-w-xs">
         <nav className="grid gap-6 text-lg font-medium">
           {navItems.map(({ href, label, icon: Icon }) => {
-            // Handle both regular routes and static export (.html) routes
-            const isActive = 
-              pathname === href || 
-              pathname === `${href}/` ||
-              pathname === `${href}.html`;
+            const isActive = isNavLinkActive(pathname, href);
             return (
               <Link
                 key={href}

@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Tooltip,
   TooltipContent,
@@ -8,6 +6,7 @@ import {
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { isNavLinkActive } from '@/lib/navigation-utils';
 
 export function NavItem({
   href,
@@ -19,11 +18,7 @@ export function NavItem({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  // Handle both regular routes and static export (.html) routes
-  const isActive = 
-    pathname === href || 
-    pathname === `${href}/` ||
-    pathname === `${href}.html`;
+  const isActive = isNavLinkActive(pathname, href);
 
   return (
     <Tooltip>
