@@ -125,21 +125,28 @@ function MobileNav() {
       </SheetTrigger>
       <SheetContent side="left" className="sm:max-w-xs">
         <nav className="grid gap-6 text-lg font-medium">
-          {navItems.map(({ href, label, icon: Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className={cn(
-                'flex items-center gap-4 px-2.5 min-h-[44px] transition-colors',
-                pathname === href
-                  ? 'text-foreground font-semibold'
-                  : 'text-muted-foreground hover:text-foreground'
-              )}
-            >
-              <Icon className="h-5 w-5" />
-              {label}
-            </Link>
-          ))}
+          {navItems.map(({ href, label, icon: Icon }) => {
+            // Handle both regular routes and static export (.html) routes
+            const isActive = 
+              pathname === href || 
+              pathname === `${href}/` ||
+              pathname === `${href}.html`;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={cn(
+                  'flex items-center gap-4 px-2.5 min-h-[44px] transition-colors',
+                  isActive
+                    ? 'text-foreground font-semibold'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                <Icon className="h-5 w-5" />
+                {label}
+              </Link>
+            );
+          })}
         </nav>
       </SheetContent>
     </Sheet>
