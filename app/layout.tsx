@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="zh_cn" suppressHydrationWarning>
       <body className="flex min-h-screen w-full flex-col">
         {children}
+        {/* Analytics placed at end of body for optimal performance */}
         <Analytics />
       </body>
     </html>
