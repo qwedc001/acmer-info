@@ -41,6 +41,14 @@
       "pinned": true
     },
     {
+      "name": "23",
+      "groupid": "24",
+      "owner": "23",
+      "notes": "23",
+      "comments": "_No response_",
+      "pinned": false
+    },
+    {
       "name": "ACMinecraft",
       "groupid": "186650075",
       "owner": "英语不过130不改名",
@@ -51,15 +59,17 @@
       "groupid": "1070785375",
       "owner": "October_Target_CM",
       "notes": "a批の北京面基交友约饭团建群"
-    },
-    {
-      "name": "acm减脂交流群",
-      "groupid": "753396361",
-      "owner": "花椒",
-      "notes": "三分练七分吃，分享健康餐，互相鼓励，狂吃不胖的不许加"
     }
   ],
   "contest": [
+    {
+      "name": "23",
+      "groupid": "24",
+      "owner": "23",
+      "notes": "23",
+      "comments": "_No response_",
+      "pinned": false
+    },
     {
       "name": "ICPC 2025 西安赛站",
       "groupid": "",
